@@ -1,12 +1,13 @@
 #job sequencing with deadlines
 
-def inser_profit(max_profit,profit_array,D,i):             #Recursive_function that put profit in max_profit_array
-    if max_profit[D-1]==0:
-        max_profit[D-1]=profit_array[i]
+def inser_profit(max_profit,profit_array,D,i):             #Recursive_function that put profit in max_profit_arra
+    if max_profit[D-1]==0:                                 #D is a deadline, and "D-1" happen because index of max_profitt_array start 
+        max_profit[D-1]=profit_array[i]                    #--with 0 index but deadline does not contain 0
         return
     else:
         inser_profit(max_profit,profit_array,D-1,i)
 if __name__=='__main__':
+    job_profit={200:'j1',180:'j2',190:'j3',300:'j4',120:'j5',100:'j6'}
     deadline=[5,3,3,2,4,2]                              # input() for deadline
     profit_array=[200,180,190,300,120,100]              # input() for profit per job
     max_deadline=max(deadline)
@@ -17,6 +18,7 @@ if __name__=='__main__':
     for x,i in enumerate(index):
         if x<max_deadline:
             inser_profit(max_profit_array,profit_array,deadline[i],i)
-        else:
-            print(sum(max_profit_array))
+    # print start the real thing
+    print("sequence of job for max profit","==",[job_profit[i] for i in max_profit_array] )
+    print("maximum profit","==",sum(max_profit_array))
 
