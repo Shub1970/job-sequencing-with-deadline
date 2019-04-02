@@ -7,7 +7,7 @@ def inser_profit(max_profit,profit_array,D,i):             #Recursive_function t
     else:
         inser_profit(max_profit,profit_array,D-1,i)
 if __name__=='__main__':
-    job_profit={200:'j1',180:'j2',190:'j3',300:'j4',120:'j5',100:'j6'}
+    job_profit={200:'j1',180:'j2',190:'j3',300:'j4',120:'j5',100:'j6'}  #don't put same value of profit
     deadline=[5,3,3,2,4,2]                              # input() for deadline
     profit_array=[200,180,190,300,120,100]              # input() for profit per job
     max_deadline=max(deadline)
